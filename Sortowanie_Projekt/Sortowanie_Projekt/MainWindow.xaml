@@ -1,0 +1,222 @@
+﻿<Window x:Class="Sortowanie_Projekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sortowanie_Projekt"              
+        xmlns:d3="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"       
+        xmlns:datavis="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit" 
+        xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"  
+     
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1920">
+    <Grid>
+        <!--<ItemsControl ItemsSource="{Binding}">
+
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10,10,10,80" VerticalAlignment="Bottom">
+                        <Border Name="br" Margin="3,10,3,10"  CornerRadius="5" 
+                                Background="{Binding Color}"
+                                Width="20" BorderBrush="{Binding Color}"  
+                                BorderThickness="3" 
+                                Height="{Binding Data}">
+                            <Border.Triggers>
+                                <EventTrigger RoutedEvent="Border.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation From="0"  
+                                                             Storyboard.TargetName="br" 
+                                 Storyboard.TargetProperty="(FrameworkElement.Height)" 
+                                                              Duration="0:0:02.0">
+
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Border.Triggers>
+                        </Border>
+                        <TextBlock HorizontalAlignment="Center" FontWeight="Bold" 
+                                   FontFamily="Latha" Text="{Binding Data}">
+                            <TextBlock.RenderTransform>
+                                <TranslateTransform Y="-30"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Foreground="{Binding Color}"
+                                   FontWeight="Bold" FontFamily="Latha" 
+                                   Text="{Binding Name}">
+                            <TextBlock.RenderTransform>
+                                <TranslateTransform Y="-20"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+        </ItemsControl>-->   
+        <StackPanel>
+            <Grid>
+                <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible">  
+                <Grid>
+                    <Button Content="INT Insertion Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick"  HorizontalAlignment="Left"/>
+                    <Button Content="INT Insertion Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick2" HorizontalAlignment="Left" Margin="200,0,0,0"/>
+                    <Button Content="INT Insertion Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick3" HorizontalAlignment="Left" Margin="400,0,0,0"/>
+                    <Button Content="INT Insertion Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick4" HorizontalAlignment="Left" Margin="600,0,0,0"/>
+                    <Button Content="INT Insertion Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick5" HorizontalAlignment="Left" Margin="800,0,0,0"/>
+
+                    <Button Content="short Insertion Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClicka"  HorizontalAlignment="Left" Margin="1000,0,0,0"/>
+                    <Button Content="short Insertion Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick2a" HorizontalAlignment="Left" Margin="1200,0,0,0"/>
+                    <Button Content="short Insertion Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick3a" HorizontalAlignment="Left" Margin="1400,0,0,0"/>
+                    <Button Content="short Insertion Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick4a" HorizontalAlignment="Left" Margin="1600,0,0,0"/>
+                    <Button Content="short Insertion Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick5a" HorizontalAlignment="Left" Margin="1800,0,0,0"/>
+
+                    <Button Content="float Insertion Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClickb"  HorizontalAlignment="Left" Margin="2000,0,0,0"/>
+                    <Button Content="float Insertion Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick2b" HorizontalAlignment="Left" Margin="2200,0,0,0"/>
+                    <Button Content="float Insertion Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick3b" HorizontalAlignment="Left" Margin="2400,0,0,0"/>
+                    <Button Content="float Insertion Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick4b" HorizontalAlignment="Left" Margin="2600,0,0,0"/>
+                    <Button Content="float Insertion Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick5b" HorizontalAlignment="Left" Margin="2800,0,0,0"/>
+
+                                                                                                                                                                                                 
+                    
+
+                    <Button Content="INT Selection Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick6"  HorizontalAlignment="Left" Margin="0,30,0,0"/>
+                    <Button Content="INT Selection Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick7" HorizontalAlignment="Left" Margin="200,30,0,0"/>
+                    <Button Content="INT Selection Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick8" HorizontalAlignment="Left" Margin="400,30,0,0"/>
+                    <Button Content="INT Selection Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick9" HorizontalAlignment="Left" Margin="600,30,0,0"/>
+                    <Button Content="INT Selection Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick10" HorizontalAlignment="Left" Margin="800,30,0,0"/>
+
+                    <Button Content="short Selection Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick6a"  HorizontalAlignment="Left" Margin="1000,30,0,0"/>
+                    <Button Content="short Selection Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick7a" HorizontalAlignment="Left" Margin="1200,30,0,0"/>
+                    <Button Content="short Selection Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick8a" HorizontalAlignment="Left" Margin="1400,30,0,0"/>
+                    <Button Content="short Selection Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick9a" HorizontalAlignment="Left" Margin="1600,30,0,0"/>
+                    <Button Content="short Selection Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick10a" HorizontalAlignment="Left" Margin="1800,30,0,0"/>
+
+                    <Button Content="float Selection Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick6b"  HorizontalAlignment="Left" Margin="2000,30,0,0"/>
+                    <Button Content="float Selection Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick7b" HorizontalAlignment="Left" Margin="2200,30,0,0"/>
+                    <Button Content="float Selection Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick8b" HorizontalAlignment="Left" Margin="2400,30,0,0"/>
+                    <Button Content="float Selection Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick9b" HorizontalAlignment="Left" Margin="2600,30,0,0"/>
+                    <Button Content="float Selection Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick10b" HorizontalAlignment="Left" Margin="2800,30,0,0"/>
+                                     
+                    
+                    
+
+
+                    <Button Content="INT Heap Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick11"  HorizontalAlignment="Left" Margin="0,60,0,0"/>
+                    <Button Content="INT Heap Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick12" HorizontalAlignment="Left" Margin="200,60,0,0"/>
+                    <Button Content="INT Heap Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick13" HorizontalAlignment="Left" Margin="400,60,0,0"/>
+                    <Button Content="INT Heap Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick14" HorizontalAlignment="Left" Margin="600,60,0,0"/>
+                    <Button Content="INT Heap Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick15" HorizontalAlignment="Left" Margin="800,60,0,0"/>
+
+                    <Button Content="short Heap Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick11a"  HorizontalAlignment="Left" Margin="1000,60,0,0"/>
+                    <Button Content="short Heap Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick12a" HorizontalAlignment="Left" Margin="1200,60,0,0"/>
+                    <Button Content="short Heap Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick13a" HorizontalAlignment="Left" Margin="1400,60,0,0"/>
+                    <Button Content="short Heap Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick14a" HorizontalAlignment="Left" Margin="1600,60,0,0"/>
+                    <Button Content="short Heap Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick15a" HorizontalAlignment="Left" Margin="1800,60,0,0"/>
+
+
+                    <Button Content="float Heap Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick11b"  HorizontalAlignment="Left" Margin="2000,60,0,0"/>
+                    <Button Content="float Heap Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick12b" HorizontalAlignment="Left" Margin="2200,60,0,0"/>
+                    <Button Content="float Heap Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick13b" HorizontalAlignment="Left" Margin="2400,60,0,0"/>
+                    <Button Content="float Heap Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick14b" HorizontalAlignment="Left" Margin="2600,60,0,0"/>
+                    <Button Content="float Heap Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick15b" HorizontalAlignment="Left" Margin="2800,60,0,0"/>
+
+                           
+
+                    <Button Content="INT Coctail Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick16"  HorizontalAlignment="Left" Margin="0,90,0,0"/>
+                    <Button Content="INT Coctail Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick17" HorizontalAlignment="Left" Margin="200,90,0,0"/>
+                    <Button Content="INT Coctail Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick18" HorizontalAlignment="Left" Margin="400,90,0,0"/>
+                    <Button Content="INT Coctail Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick19" HorizontalAlignment="Left" Margin="600,90,0,0"/>
+                    <Button Content="INT Coctail Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick20" HorizontalAlignment="Left" Margin="800,90,0,0"/>
+
+                    <Button Content="short Coctail Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick16a"  HorizontalAlignment="Left" Margin="1000,90,0,0"/>
+                    <Button Content="short Coctail Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick17a" HorizontalAlignment="Left" Margin="1200,90,0,0"/>
+                    <Button Content="short Coctail Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick18a" HorizontalAlignment="Left" Margin="1400,90,0,0"/>
+                    <Button Content="short Coctail Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick19a" HorizontalAlignment="Left" Margin="1600,90,0,0"/>
+                    <Button Content="short Coctail Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick20a" HorizontalAlignment="Left" Margin="1800,90,0,0"/>
+
+
+                    <Button Content="float Coctail Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick16b"  HorizontalAlignment="Left" Margin="2000,90,0,0"/>
+                    <Button Content="float Coctail Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick17b" HorizontalAlignment="Left" Margin="2200,90,0,0"/>
+                    <Button Content="float Coctail Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick18b" HorizontalAlignment="Left" Margin="2400,90,0,0"/>
+                    <Button Content="float Coctail Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick19b" HorizontalAlignment="Left" Margin="2600,90,0,0"/>
+                    <Button Content="float Coctail Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick20b" HorizontalAlignment="Left" Margin="2800,90,0,0"/>
+
+
+
+                        <Button Content="INT Recursive Quick Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick21"  HorizontalAlignment="Left" Margin="0,120,0,0"/>
+                    <Button Content="INT Recursive Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick22" HorizontalAlignment="Left" Margin="200,120,0,0"/>
+                    <Button Content="INT Recursive Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick23" HorizontalAlignment="Left" Margin="400,120,0,0"/>
+                    <Button Content="INT Recursive Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick24" HorizontalAlignment="Left" Margin="600,120,0,0"/>
+                    <Button Content="INT Recursive Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick25" HorizontalAlignment="Left" Margin="800,120,0,0"/>
+
+                    <Button Content="INT Iterative Sort Losowy" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick26"  HorizontalAlignment="Left" Margin="1000,120,0,0"/>
+                    <Button Content="INT Iterative Sort Rosnący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick27" HorizontalAlignment="Left" Margin="1200,120,0,0"/>
+                    <Button Content="INT Iterative Sort Malejący" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick28" HorizontalAlignment="Left" Margin="1400,120,0,0"/>
+                    <Button Content="INT Iterative Sort Stały" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick29" HorizontalAlignment="Left" Margin="1600,120,0,0"/>
+                    <Button Content="INT Iterative Sort V-kształt" Height="20" VerticalAlignment="Top" Width="175" Click="ButtonBase_OnClick30" HorizontalAlignment="Left" Margin="1800,120,0,0"/>
+
+
+
+            </Grid>
+                </ScrollViewer>
+            </Grid>  
+            <!--<Grid Height="450">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Grid.Column="1" Grid.Row="0">
+                <charting:Chart x:Name="waitingtasks" BorderBrush="Transparent" BorderThickness="0" VerticalAlignment="Stretch" Title="Waiting Tasks">
+                <charting:Chart.TitleStyle>
+                    <Style TargetType="datavis:Title">
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
+                        <Setter Property="Foreground" Value="White"/>
+                    </Style>
+                </charting:Chart.TitleStyle>
+                <charting:Chart.LegendStyle>
+                    <Style TargetType="datavis:Legend">
+                        <Setter Property="Width" Value="0" />
+                    </Style>
+                </charting:Chart.LegendStyle>
+                <charting:Chart.Axes>
+                    <charting:LinearAxis Orientation="X" Title="Time" Interval="1" ShowGridLines="False"/>
+                    <charting:LinearAxis Title="Number of Waiting Tasks" Orientation="Y" Interval="10" ShowGridLines="False"/>
+                </charting:Chart.Axes>
+                <charting:LineSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True" 
+                                     AnimationSequence="FirstToLast"/>       
+                    </charting:Chart>  
+                </Grid>
+            </Grid>-->
+            <!--<Grid Height="400">
+                <Grid.Resources>
+                    <Style TargetType="lvc:Separator">
+                        <Setter Property="Stroke" Value="#69000000"></Setter>
+                        <Setter Property="StrokeThickness" Value=".8"></Setter>
+                        <Setter Property="StrokeDashArray" Value="2"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock TextWrapping="Wrap">
+                    In this case we have 30 series, with 10,000 points each, 
+                    even the quality is set to low, once you zoom in the library is smart 
+                    enough to draw the lines without any error, use your mouse wheel to zoom in/out,
+                    click hold and drag for panning.
+                </TextBlock>
+                <lvc:CartesianChart Grid.Row="1" 
+                                    DisableAnimations="True"
+                                    Series="{Binding Series}" 
+                                    DataTooltip="{x:Null}"
+                                    Zoom="Xy"/>
+            </Grid>-->    
+            
+            <Grid Name="Wykres"></Grid>
+        </StackPanel>
+       
+    </Grid>
+</Window>
